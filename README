@@ -1,0 +1,83 @@
+                              awget
+
+  What is it?
+  -----------
+
+  awget is an anonymous file downloader. It consists of two parts awget and ss.
+
+  awget - Is the reader which takes the file to download and traverses the
+  stepping stones in order to request the file.
+
+  ss - is the stepping stone program that acts both as a server and client. It
+  either downloads the requested file or passes the request along.
+
+  The Latest Version
+  ------------------
+
+  The latest version of this program is v1 and is slated to be the only version
+  released unless requested.
+
+  Documentation
+  -------------
+
+  This is only documentation for awget. If you require more information please
+  email the author.
+
+  Installation
+  ------------
+
+  To install ensure you have the g++ compiler installed on the system and follow
+  the following steps.
+
+  1) Unpack awget.tar on to target system. (This readme is apart of the tar)
+  2) Navigate to the directory you unpacked the tar and type 'make'
+  3) Deploy Stepping Stones (the ss exec program) on separate systems.
+
+  Optional:
+  'make clean' - will delete object files and executable
+  'make debug' - will compile the program will full debug options
+  'make tar' - will tar cipher will all necessary files.
+  'make awget' - will compile only the awget (Requester) program
+  'make ss' - will compile only the ss (Relayer) program
+
+  To Use:
+  ------------
+  1) Run the Stepping Stones on additional servers.
+  ss <optional flags>
+
+    -h prints the help message
+    -p <SERVER PORT> specifies the port number to listen on.
+
+    No options will listen on port 21789.
+
+  2) Create a chainfile.
+    In a text editor and create a file with the following format.
+    <Number of Stones in file>
+    <Server Address> <Port Number>
+    <Server Address> <Port Number>
+
+    Where number of the stones in a file is an integer with number of Server
+    Addresses and Port Number combination listen. NOTE: These must be running a
+    ss program.
+
+  3) Run the awget program.
+  awget <optional flags> REQUEST_FILE
+
+    -h prints the help message
+    -c <chain file> specifies the file containing the chain file.
+
+    If no chain file is specified chaingang.txt file will be used.
+
+  Licensing
+  ---------
+
+  This program was created for an academic purpose and as such is free to use or
+  modify.
+
+  Contacts
+  --------
+
+  If you have questions contact me at nluedtke@rams.colostate.edu. Assume no
+  information going to this email is private. Any information that warrants
+  privacy should be sent encrypted to nicholas.luedtke@uwalumni.com using the
+  public key available on most popular key servers.
